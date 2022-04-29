@@ -2,7 +2,7 @@ const inputText = document.querySelector("#search");
 const celsius = document.querySelector("#celsius");
 const climate = document.querySelector("#climate");
 const section = document.querySelector(".section");
-const API_KEY = 'bb32135fcedc29ed338851853affceed';
+const API_KEY = 'Your_key';
 
 const getWeather = async (city) => {
     section.innerHTML = `<h2>Loading</h2>`;
@@ -26,9 +26,10 @@ const showWeather = (data) => {
 
 inputText.addEventListener("keyup", function(event)
 {
+    
     if(event.key === "Enter")
     {
-        if(this.value!= "")
+        if(this.value.split(' ').join('') != "")
         {
         getWeather(this.value);
         inputText.value = "";
